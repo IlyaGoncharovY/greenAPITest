@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {NaviBar} from "./ui/components/NavBar/NaviBar";
+import {Navigate, Route, Routes} from 'react-router-dom';
+import {PATH} from "./utils/path/PATH";
+import {LoginPage} from "./ui/components/Login/LoginPage";
+import {ChatPage} from "./ui/components/Chat/ChatPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <NaviBar/>
+            <Routes>
+                <Route path={PATH.LOGIN} element={<LoginPage/>}/>
+                <Route path={PATH.CHAT_PAGE} element={<ChatPage/>}/>
+                <Route path={PATH.MAIN} element={<Navigate to={PATH.CHAT_PAGE}/>}/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
