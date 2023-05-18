@@ -18,18 +18,27 @@ export const DisplayBody: FC<DisplayBodyType> = ({activateChatId}) => {
 
     const dispatch = useAppDispatch()
 
+    // useEffect(() => {
+    //     const intervalId = setInterval(() => {
+    //         guestMessages.forEach((guestMessage) => {
+    //             const receiptId = guestMessage.receiptId;
+    //             dispatch(getMessageTC(idInstance, apiTokenInstance, receiptId));
+    //             console.log(guestMessage)
+    //         });
+    //     }, 1000);
+    //
+    //     return () => {
+    //         clearInterval(intervalId);
+    //     };
+    // }, [dispatch, guestMessages]);;
     useEffect(() => {
         const intervalId = setInterval(() => {
-            guestMessages.forEach((guestMessage) => {
-                const receiptId = guestMessage.receiptId;
-                dispatch(getMessageTC(idInstance, apiTokenInstance, receiptId));
-            });
-        }, 6000);
-        console.log(guestMessages)
+          dispatch(getMessageTC(idInstance, apiTokenInstance))
+        }, 2000)
         return () => {
-            clearInterval(intervalId);
-        };
-    }, [guestMessages, dispatch, idInstance, apiTokenInstance]);
+            clearInterval(intervalId)
+        }
+    }, [])
 
     const filteredMessages = messages.filter((message) => message.chatId === activateChatId);
     const filteredGuestMessages = guestMessages.filter((guestMessage) => guestMessage.body.senderData.chatId === activateChatId);
@@ -39,13 +48,13 @@ export const DisplayBody: FC<DisplayBodyType> = ({activateChatId}) => {
             <div>
                 Me - {filteredMessages.map((el, index) =>
                 <div key={index}>
-                    <MeMessageItem message={el.message} />
+                    <MeMessageItem message={el.message}/>
                 </div>)}
             </div>
             <div>
                 Other - {filteredGuestMessages.map((el, index) =>
                 <div key={index}>
-                    <GuestMessageItem guestMessage={el.body} />
+                    <GuestMessageItem guestMessage={el.body}/>
                 </div>
             )}
             </div>

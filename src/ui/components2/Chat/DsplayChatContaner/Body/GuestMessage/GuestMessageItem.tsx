@@ -8,7 +8,7 @@ interface GuestMessageItemType {
 export const GuestMessageItem:FC<GuestMessageItemType> = ({guestMessage}) => {
     return (
         <div>
-            Guest - {guestMessage.messageData.extendedTextMessageData.text}
+            Guest - {guestMessage.messageData.textMessageData.textMessage}
         </div>
     );
 };
