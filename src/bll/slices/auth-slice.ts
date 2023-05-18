@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {authAPI} from "../../dal/authAPI";
+import {authAPI} from "../../api/authAPI";
 import {AppThunk} from "../store/store";
 
 interface initialStateType {
@@ -33,7 +33,8 @@ const AuthSlice = createSlice({
 export const {setIsLoggedIn, setIdInstance, setApiTokenInstance} = AuthSlice.actions
 
 
-export const loginTC = (idInstance: string, apiTokenInstance: string): AppThunk => async (dispatch) => {
+export const loginTC = (idInstance: string, apiTokenInstance: string): AppThunk =>
+    async (dispatch) => {
     try {
         const res = await authAPI.login(idInstance, apiTokenInstance);
         if (res.data.wid.length) {
@@ -46,7 +47,8 @@ export const loginTC = (idInstance: string, apiTokenInstance: string): AppThunk 
     }
 };
 
-export const logOutTC = (idInstance: string, apiTokenInstance: string): AppThunk => async (dispatch) => {
+export const logOutTC = (idInstance: string, apiTokenInstance: string): AppThunk =>
+    async (dispatch) => {
     try {
         const res = await authAPI.logout(idInstance, apiTokenInstance);
         if (res.data.isLogout) {

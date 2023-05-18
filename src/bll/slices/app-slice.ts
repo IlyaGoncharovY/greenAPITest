@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {authAPI} from "../../dal/authAPI";
+import {authAPI} from "../../api/authAPI";
 import {AppThunk} from "../store/store";
 import {setIsLoggedIn} from "./auth-slice";
 
