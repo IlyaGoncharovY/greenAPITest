@@ -5,11 +5,10 @@ export const messageAPI = {
         return instance.post<ResponseSendMessageType>(`waInstance${idInstance}/SendMessage/${apiTokenInstance}`, data)
     },
     GetMessageBody(idInstance: string, apiTokenInstance: string) {
-        return instance.get<ResponseGetMessageType>(`waInstance${idInstance}/getContactInfo/${apiTokenInstance}`
-        )
+        return instance.get<ResponseGetMessageType>(`waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
     },
     DeleteNotification(idInstance: string, apiTokenInstance: string, receiptId: number) {
-        return instance.delete<ResponseDeleteNotification>(`waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${receiptId}`)
+        return instance.delete<ResponseDeleteNotification>(`waInstance${idInstance}/deleteNotification/${apiTokenInstance}/${receiptId}`)
     }
 }
 
@@ -58,16 +57,12 @@ export type ResponseGetMessageTypeBodySenderData = {
 }
 
 export type ResponseGetMessageTypeBodyMessageDataExtendedTextMessageData = {
-    text: string;
-    description: string;
-    title: string;
-    previewType: string;
-    jpegThumbnail: string;
+    textMessage:string
 }
 
 export type ResponseGetMessageTypeBodyMessageData = {
     typeMessage: string;
-    extendedTextMessageData: ResponseGetMessageTypeBodyMessageDataExtendedTextMessageData;
+    textMessageData: ResponseGetMessageTypeBodyMessageDataExtendedTextMessageData;
 }
 
 export type ResponseGetMessageTypeBody = {
