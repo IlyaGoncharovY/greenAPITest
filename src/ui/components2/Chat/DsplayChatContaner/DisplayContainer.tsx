@@ -14,7 +14,7 @@ export const DisplayContainer:FC<DisplayContainerType> = ({users, activateChatId
     return (
         <div style={{border: "1px solid green"}}>
             <HeaderBodyChat users={users} activateChatId={activateChatId}/>
-            <DisplayBody users={users} activateChatId={activateChatId}/>
+            <DisplayBody activateChatId={activateChatId}/>
             <InputForMessage/>
         </div>
     );
