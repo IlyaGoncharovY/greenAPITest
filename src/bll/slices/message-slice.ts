@@ -1,5 +1,10 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {messageAPI, RequestSendMessageType, ResponseGetMessageType} from "../../api/messageAPI";
+import {
+    messageAPI,
+    RequestSendMessageType,
+    ResponseGetMessageType,
+    ResponseGetMessageTypeBodySenderData
+} from "../../api/messageAPI";
 import {AppThunk} from "../store/store";
 
 interface initialStateType {
@@ -10,6 +15,11 @@ interface initialStateType {
 const initialState: initialStateType = {
     messages: [],
     guestMessages: []
+}
+
+export interface ExtendedResponseGetMessageType extends ResponseGetMessageType {
+    idMessage: string;
+    senderData: ResponseGetMessageTypeBodySenderData;
 }
 
 const MessageSlice = createSlice({
@@ -39,15 +49,40 @@ export const sendMessageTC = (idInstance: string, apiTokenInstance: string, data
         }
     }
 
-export const getMessageTC = (idInstance: string, apiTokenInstance: string, receiptId: number): AppThunk =>
+// export const getMessageTC = (idInstance: string, apiTokenInstance: string, receiptId: number): AppThunk =>
+//     async (dispatch) => {
+//         try {
+//             const res = await messageAPI.GetMessageBody(idInstance, apiTokenInstance);
+//             if (res.data) {
+//                 dispatch(getMessage(res.data));
+//                 await messageAPI.DeleteNotification(idInstance, apiTokenInstance, receiptId);
+//                 console.log("Notification deleted successfully");
+//             }
+//         } catch (e) {
+//             console.log(e);
+//         }
+//     };
+export const getMessageTC = (idInstance: string, apiTokenInstance: string): AppThunk =>
     async (dispatch) => {
-    try {
+        try {
             const res = await messageAPI.GetMessageBody(idInstance, apiTokenInstance);
             if (res.data) {
-                dispatch(getMessage(res.data));
-                await messageAPI.DeleteNotification(idInstance, apiTokenInstance, receiptId);
-                console.log("Notification deleted successfully");
+                const {idMessage, messageData, senderData, typeWebhook} = res.data.body
+                if (typeWebhook === "incomingMessageReceived"
+                    && messageData.typeMessage === "textMessage") {
+                  const extendedResponse: ExtendedResponseGetMessageType = {
+                      ...res.data,
+                      idMessage,
+                      senderData
+                  }
+                  dispatch(getMessage(extendedResponse))
+                }
             }
+            const receiptId = res.data.receiptId
+            if (res.data.receiptId) {
+               await messageAPI.DeleteNotification(idInstance, apiTokenInstance, receiptId)
+            }
+
         } catch (e) {
             console.log(e);
         }
