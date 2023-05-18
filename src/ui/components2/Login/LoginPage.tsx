@@ -24,9 +24,7 @@ export const LoginPage = () => {
                 .required('Required'),
         }),
         onSubmit: values => {
-            console.log(`before dispatch ${isLoggedIn}`)
             dispatch(loginTC(values.idInstance, values.apiTokenInstance));
-            console.log(`after dispatch ${isLoggedIn}`)
         },
     });
 
