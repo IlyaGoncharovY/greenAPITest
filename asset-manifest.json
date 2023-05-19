@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/greenAPITest/static/css/main.43aef3ac.css",
-    "main.js": "/greenAPITest/static/js/main.b4397848.js",
+    "main.css": "/greenAPITest/static/css/main.59cbe323.css",
+    "main.js": "/greenAPITest/static/js/main.e6158b5d.js",
     "static/js/787.28cb0dcd.chunk.js": "/greenAPITest/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/greenAPITest/index.html",
-    "main.43aef3ac.css.map": "/greenAPITest/static/css/main.43aef3ac.css.map",
-    "main.b4397848.js.map": "/greenAPITest/static/js/main.b4397848.js.map",
+    "main.59cbe323.css.map": "/greenAPITest/static/css/main.59cbe323.css.map",
+    "main.e6158b5d.js.map": "/greenAPITest/static/js/main.e6158b5d.js.map",
     "787.28cb0dcd.chunk.js.map": "/greenAPITest/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43aef3ac.css",
-    "static/js/main.b4397848.js"
+    "static/css/main.59cbe323.css",
+    "static/js/main.e6158b5d.js"
   ]
 }
