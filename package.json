@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://github.io/IlyaGoncharovY/greenAPITest",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
