@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/IlyaGoncharovY/greenAPITest/static/css/main.43aef3ac.css",
+    "main.js": "/IlyaGoncharovY/greenAPITest/static/js/main.ececf00d.js",
+    "static/js/787.28cb0dcd.chunk.js": "/IlyaGoncharovY/greenAPITest/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/IlyaGoncharovY/greenAPITest/index.html",
+    "main.43aef3ac.css.map": "/IlyaGoncharovY/greenAPITest/static/css/main.43aef3ac.css.map",
+    "main.ececf00d.js.map": "/IlyaGoncharovY/greenAPITest/static/js/main.ececf00d.js.map",
+    "787.28cb0dcd.chunk.js.map": "/IlyaGoncharovY/greenAPITest/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43aef3ac.css",
+    "static/js/main.ececf00d.js"
+  ]
+}
