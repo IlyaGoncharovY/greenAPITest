@@ -18,7 +18,7 @@ export const DisplayBody: FC<DisplayBodyType> = ({activateChatId}) => {
 
     const dispatch = useAppDispatch()
     const containerRef = useRef<HTMLDivElement>(null);
-    
+
     useEffect(() => {
         const intervalId = setInterval(() => {
           dispatch(getMessageTC(idInstance, apiTokenInstance))
