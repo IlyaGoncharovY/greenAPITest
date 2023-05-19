@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/IlyaGoncharovY/greenAPITest/static/css/main.43aef3ac.css",
-    "main.js": "/IlyaGoncharovY/greenAPITest/static/js/main.ececf00d.js",
-    "static/js/787.28cb0dcd.chunk.js": "/IlyaGoncharovY/greenAPITest/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/IlyaGoncharovY/greenAPITest/index.html",
-    "main.43aef3ac.css.map": "/IlyaGoncharovY/greenAPITest/static/css/main.43aef3ac.css.map",
-    "main.ececf00d.js.map": "/IlyaGoncharovY/greenAPITest/static/js/main.ececf00d.js.map",
-    "787.28cb0dcd.chunk.js.map": "/IlyaGoncharovY/greenAPITest/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/greenAPITest/static/css/main.43aef3ac.css",
+    "main.js": "/greenAPITest/static/js/main.b4397848.js",
+    "static/js/787.28cb0dcd.chunk.js": "/greenAPITest/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/greenAPITest/index.html",
+    "main.43aef3ac.css.map": "/greenAPITest/static/css/main.43aef3ac.css.map",
+    "main.b4397848.js.map": "/greenAPITest/static/js/main.b4397848.js.map",
+    "787.28cb0dcd.chunk.js.map": "/greenAPITest/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43aef3ac.css",
-    "static/js/main.ececf00d.js"
+    "static/js/main.b4397848.js"
   ]
 }
