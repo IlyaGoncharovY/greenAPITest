@@ -14,12 +14,16 @@ export const HeaderBodyChat: FC<HeaderBodyChatType> = ({users, activateChatId}) 
     }
 
     return (
-        <div>
+        <div className="d-flex align-items-center">
             {activateChatId && getInfoContact() ? (
                 <>
-                    <img src={getInfoContact().avatar ? getInfoContact().avatar : defaultAva}
-                         alt={"avatar"} style={{width:"40px"}}/>
-                    {getInfoContact().name ? getInfoContact().name : getInfoContact().chatId}
+                    <img
+                        src={getInfoContact().avatar ? getInfoContact().avatar : defaultAva}
+                        alt="avatar"
+                        style={{ width: '40px' }}
+                        className="m-2"
+                    />
+                    <div>{getInfoContact().name ? getInfoContact().name : getInfoContact().chatId}</div>
                 </>
             ) : null}
         </div>

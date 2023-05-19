@@ -1,0 +1,10 @@
+.DisplayContainer {
+    height: 400px;
+    overflow: auto;
+    padding: 20px;
+}
+
+.MessageBox {
+    display: flex;
+    flex-direction: column;
+}

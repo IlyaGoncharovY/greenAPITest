@@ -4,6 +4,7 @@ import {useAppSelector} from "../../../bll/store/hook";
 import {PATH} from "../../../utils/path/PATH";
 import {DisplayContainer} from "./DsplayChatContaner/DisplayContainer";
 import {AddChat} from "./AddChatContaner/AddChat/AddChat";
+import {Col, Container, Row} from "react-bootstrap";
 
 export const ChatPage = () => {
 
@@ -22,13 +23,16 @@ export const ChatPage = () => {
     }
 
     return (
-        <div>
-            ChatPage
-            <div style={{display: "flex", justifyContent: "space-between", border:"1px solid blue"}}>
-                <AddChat users={users}/>
-                <DisplayContainer users={users} activateChatId={activateChatId}/>
-            </div>
-        </div>
+        <Container fluid style={{ height: "100vh" }}>
+            <Row style={{ height: "100%" }}>
+                <Col md={4} style={{ backgroundColor: "#88f1bd"}}>
+                    <AddChat users={users} />
+                </Col>
+                <Col md={8} style={{ backgroundColor: "#a3c495"}}>
+                    <DisplayContainer users={users} activateChatId={activateChatId} />
+                </Col>
+            </Row>
+        </Container>
     );
 };
 

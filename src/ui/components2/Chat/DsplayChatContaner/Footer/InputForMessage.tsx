@@ -23,11 +23,12 @@ export const InputForMessage = () => {
     }
 
     return (
-            <div>
-                <input placeholder={"tap you message"} ref={inputSendRef}/>
-                <button onClick={onClickHandler}>to send</button>
-            </div>
-
+        <div className="d-flex justify-content-center">
+            <input className="form-control me-2" placeholder="Type your message" ref={inputSendRef} style={{ flex: '8' }} />
+            <button className="btn btn-primary" onClick={onClickHandler} style={{ flex: '2' }}>
+                Send
+            </button>
+        </div>
     );
 };
 

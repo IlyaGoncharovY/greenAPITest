@@ -1,6 +1,7 @@
 import React from 'react';
 import {useAppDispatch, useAppSelector} from "../../../../../../bll/store/hook";
 import {logOutTC} from "../../../../../../bll/slices/auth-slice";
+import {Button} from "react-bootstrap";
 
 
 
@@ -17,7 +18,7 @@ export const Logout = () => {
 
     return (
         <div>
-            <button onClick={LogOutHandler}>LogOut</button>
+            <Button variant={"warning"} onClick={LogOutHandler}>LogOut</Button>
         </div>
     );
 };

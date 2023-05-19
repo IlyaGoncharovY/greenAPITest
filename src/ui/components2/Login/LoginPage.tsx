@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import {loginTC} from '../../../bll/slices/auth-slice';
 import {PATH} from '../../../utils/path/PATH';
 import {Navigate} from 'react-router-dom';
+import {Button, Col, Container, Form, Row} from "react-bootstrap";
 
 export const LoginPage = () => {
     const dispatch = useAppDispatch();
@@ -33,32 +34,43 @@ export const LoginPage = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={formik.handleSubmit}>
-                <div>
-                    <input
-                        type="idInstance"
-                        id="idInstance"
-                        placeholder="idInstance"
-                        {...formik.getFieldProps('idInstance')}
-                    />
-                    {formik.touched.idInstance && formik.errors.idInstance ?
-                        <div>{formik.errors.idInstance}</div> : null}
-                </div>
-                <div>
-                    <input
-                        type="apiTokenInstance"
-                        id="apiTokenInstance"
-                        placeholder="apiTokenInstance"
-                        {...formik.getFieldProps('apiTokenInstance')}
-                    />
-                    {formik.touched.apiTokenInstance && formik.errors.apiTokenInstance ? (
-                        <div>{formik.errors.apiTokenInstance}</div>
-                    ) : null}
-                </div>
-                <button>Login</button>
-            </form>
-        </div>
+        <Container>
+            <Row className="justify-content-center mt-5">
+                <Col xs={12} md={6}>
+                    <Form onSubmit={formik.handleSubmit}>
+                        <Form.Group className="mb-3">
+                            <Form.Label>idInstance</Form.Label>
+                            <Form.Control
+                                type="text"
+                                id="idInstance"
+                                placeholder="idInstance"
+                                {...formik.getFieldProps('idInstance')}
+                            />
+                            {formik.touched.idInstance && formik.errors.idInstance && (
+                                <div style={{ color: 'coral' }}>{formik.errors.idInstance}</div>
+                            )}
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>apiTokenInstance</Form.Label>
+                            <Form.Control
+                                type="password"
+                                id="apiTokenInstance"
+                                placeholder="apiTokenInstance"
+                                {...formik.getFieldProps('apiTokenInstance')}
+                            />
+                            {formik.touched.apiTokenInstance && formik.errors.apiTokenInstance && (
+                                <div style={{ color: 'coral' }}>{formik.errors.apiTokenInstance}</div>
+                            )}
+                        </Form.Group>
+                        <div className="text-center">
+                            <Button variant="success" type="submit">
+                                Login
+                            </Button>
+                        </div>
+                    </Form>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 

@@ -1,4 +1,6 @@
 import React, {FC} from 'react';
+import {Card} from "react-bootstrap";
+import s from "./MeMessage.module.css"
 
 interface MeMessageItemType {
     message: string
@@ -6,9 +8,11 @@ interface MeMessageItemType {
 
 export const MeMessageItem: FC<MeMessageItemType> = ({message}) => {
     return (
-        <div>
-            Me - {message}
-        </div>
+        <Card className={s.MeMessageContainer}>
+            <Card.Body>
+                <Card.Text>{message}</Card.Text>
+            </Card.Body>
+        </Card>
     );
 };
 

@@ -4,6 +4,7 @@ import {addUserTC} from "../../../../../bll/slices/chat-slice";
 import {ItemUser} from "./Item/ItemUser";
 import {Logout} from "./Logout/Logout";
 import {ResponseContactInfoType} from "../../../../../api/chatAPI";
+import {Button, Col, Container, FormControl, InputGroup, Row} from "react-bootstrap";
 
 interface AddChatType {
     users: ResponseContactInfoType[]
@@ -31,18 +32,29 @@ export const AddChat:FC<AddChatType> = ({users}) => {
     };
 
     return (
-        <div style={{border: "1px solid red"}}>
-            <input ref={inputRef} placeholder="format 79....."/>
-            <button onClick={onClickHandler}>Add Chat</button>
-            <Logout/>
-            <div>
-                {users.map((user, index) => (
-                    <div key={index}>
-                        <ItemUser user={user}/>
-                    </div>
-                ))}
-            </div>
-        </div>
+        <Container style={{ padding: '20px' }}>
+            <Row>
+                <Col md={8}>
+                    <InputGroup className="mb-3">
+                        <FormControl placeholder="(format: 79.....)" ref={inputRef} />
+                        <Button variant="primary" onClick={onClickHandler}>
+                            Add Chat
+                        </Button>
+                    </InputGroup>
+                </Col>
+                <Col md={4}>
+                    <Logout />
+                </Col>
+            </Row>
+            {users.map((user, index) => (
+                <Row key={index}>
+                    <Col md={12}>
+                        <ItemUser user={user} />
+                    </Col>
+                </Row>
+            ))}
+        </Container>
+
     );
 };
 

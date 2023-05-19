@@ -1,0 +1,7 @@
+.GuestMessageItem {
+    width: 18rem;
+    margin-top: 10px;
+    align-self: flex-start;
+    background-color: #c5ff33;
+    color: cornflowerblue;
+}
