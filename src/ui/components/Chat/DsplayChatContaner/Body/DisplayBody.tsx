@@ -1,8 +1,8 @@
 import React, {FC, useEffect, useRef} from 'react';
-import {useAppDispatch, useAppSelector} from "../../../../../bll/store/hook";
+import {useAppDispatch, useAppSelector} from "../../../../../store/config/hook";
 import {MeMessageItem} from "./MeMessage/MeMessageItem";
 import {GuestMessageItem} from "./GuestMessage/GuestMessageItem";
-import {getMessageTC} from "../../../../../bll/slices/message-slice";
+import {getMessageTC} from "../../../../../store/slices/message-slice";
 import s from "./Display.module.css"
 
 interface DisplayBodyType {

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {Navigate} from 'react-router-dom';
-import {useAppSelector} from "../../../bll/store/hook";
+import {useAppSelector} from "../../../store/config/hook";
 import {PATH} from "../../../utils/path/PATH";
 import {DisplayContainer} from "./DsplayChatContaner/DisplayContainer";
 import {AddChat} from "./AddChatContaner/AddChat/AddChat";
@@ -25,10 +25,10 @@ export const ChatPage = () => {
     return (
         <Container fluid style={{ height: "100vh" }}>
             <Row style={{ height: "100%" }}>
-                <Col md={4} style={{ backgroundColor: "#88f1bd"}}>
+                <Col md={4} style={{ backgroundColor: "#97c9b2"}}>
                     <AddChat users={users} />
                 </Col>
-                <Col md={8} style={{ backgroundColor: "#a3c495"}}>
+                <Col md={8} style={{ backgroundColor: "#a2aba0"}}>
                     <DisplayContainer users={users} activateChatId={activateChatId} />
                 </Col>
             </Row>

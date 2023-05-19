@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import {removeUser, setActiveChat} from "../../../../../../bll/slices/chat-slice";
-import {useAppDispatch} from "../../../../../../bll/store/hook";
+import {removeUser, setActiveChat} from "../../../../../../store/slices/chat-slice";
+import {useAppDispatch} from "../../../../../../store/config/hook";
 import {ResponseContactInfoType} from "../../../../../../api/chatAPI";
 import defaultAva from "../../../../../../assects/defaultAva.png"
 import {Button, Col, Row} from "react-bootstrap";

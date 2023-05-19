@@ -1,0 +1,18 @@
+.displayContainer {
+    height: 100vh;
+}
+
+.headerContainer {
+    height: 16.66%;
+}
+
+.displayBodyContainer {
+    height: 66.66%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.inputContainer {
+    height: 16.66%;
+    padding-top: 10px;
+}

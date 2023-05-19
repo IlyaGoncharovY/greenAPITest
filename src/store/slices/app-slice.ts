@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {authAPI} from "../../api/authAPI";
-import {AppThunk} from "../store/store";
+import {AppThunk} from "../config/store";
 import {setIsLoggedIn} from "./auth-slice";
 
 interface initialStateType {

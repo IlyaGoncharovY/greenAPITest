@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {AppThunk} from "../store/store";
+import {AppThunk} from "../config/store";
 import {chatAPI, RequestContactInfoType, ResponseContactInfoType} from "../../api/chatAPI";
 
 interface initialStateType {

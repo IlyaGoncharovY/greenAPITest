@@ -31,6 +31,9 @@ export type ResponseSendMessageType = {
  */
 export type ResponseGetMessageType = {
     receiptId: number;
+    /**
+     * type for body common
+     */
     body: ResponseGetMessageTypeBody;
 }
 

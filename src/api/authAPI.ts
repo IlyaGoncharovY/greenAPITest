@@ -17,10 +17,10 @@ export const authAPI = {
     }
 }
 
+/**
+ * body post response
+ */
 export type DataRequestType = {
-    /**
-     * body post response
-     */
     wid: string;
     countryInstance: string;
     typeAccount: string;

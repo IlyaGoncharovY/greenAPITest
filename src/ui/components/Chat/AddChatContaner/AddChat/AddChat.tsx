@@ -1,6 +1,6 @@
 import React, {FC, useRef} from 'react';
-import {useAppDispatch, useAppSelector} from "../../../../../bll/store/hook";
-import {addUserTC} from "../../../../../bll/slices/chat-slice";
+import {useAppDispatch, useAppSelector} from "../../../../../store/config/hook";
+import {addUserTC} from "../../../../../store/slices/chat-slice";
 import {ItemUser} from "./Item/ItemUser";
 import {Logout} from "./Logout/Logout";
 import {ResponseContactInfoType} from "../../../../../api/chatAPI";

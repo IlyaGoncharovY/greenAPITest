@@ -9,12 +9,14 @@ export const chatAPI = {
     }
 }
 
+
 export type RequestContactInfoType = {
     /**
      * id of a specific chat
      */
     chatId: string
 }
+
 
 export type RequestCheckWAType = {
     /**
@@ -23,10 +25,10 @@ export type RequestCheckWAType = {
     phoneNumber: number
 }
 
+/**
+ * body contact info
+ */
 export type ResponseContactInfoType = {
-    /**
-     * body contact info
-     */
 	avatar: string;
 	name: string;
 	email: string;

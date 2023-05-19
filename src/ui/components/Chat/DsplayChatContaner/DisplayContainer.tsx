@@ -4,6 +4,7 @@ import {DisplayBody} from "./Body/DisplayBody";
 import {InputForMessage} from "./Footer/InputForMessage";
 import {ResponseContactInfoType} from "../../../../api/chatAPI";
 import {Container} from "react-bootstrap";
+import s from "./Display.module.css"
 
 interface DisplayContainerType {
     users: ResponseContactInfoType[]
@@ -13,14 +14,14 @@ interface DisplayContainerType {
 export const DisplayContainer:FC<DisplayContainerType> = ({users, activateChatId}) => {
 
     return (
-        <div style={{ height: '100vh' }}>
-            <Container fluid style={{ height: '16.66%' }}>
+        <div className={s.displayContainer}>
+            <Container fluid className={s.headerContainer}>
                 <HeaderBodyChat users={users} activateChatId={activateChatId} />
             </Container>
-            <Container fluid style={{ height: '66.66%',border: "2px solid black", borderRadius:"10px" }}>
+            <Container fluid className={s.displayBodyContainer}>
                 <DisplayBody activateChatId={activateChatId} />
             </Container>
-            <Container fluid style={{ height: '16.66%', paddingTop:"10px" }}>
+            <Container fluid className={s.inputContainer}>
                 <InputForMessage />
             </Container>
         </div>

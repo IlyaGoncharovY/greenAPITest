@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
-import {useAppDispatch, useAppSelector} from "../../../../../bll/store/hook";
-import {sendMessageTC} from "../../../../../bll/slices/message-slice";
+import {useAppDispatch, useAppSelector} from "../../../../../store/config/hook";
+import {sendMessageTC} from "../../../../../store/slices/message-slice";
 
 
 export const InputForMessage = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import {useAppDispatch, useAppSelector} from "../../../../../../bll/store/hook";
-import {logOutTC} from "../../../../../../bll/slices/auth-slice";
+import {useAppDispatch, useAppSelector} from "../../../../../../store/config/hook";
+import {logOutTC} from "../../../../../../store/slices/auth-slice";
 import {Button} from "react-bootstrap";
 
 

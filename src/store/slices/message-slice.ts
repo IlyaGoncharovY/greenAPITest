@@ -5,7 +5,7 @@ import {
     ResponseGetMessageType,
     ResponseGetMessageTypeBodySenderData
 } from "../../api/messageAPI";
-import {AppThunk} from "../store/store";
+import {AppThunk} from "../config/store";
 
 interface initialStateType {
     messages: RequestSendMessageType[]
@@ -49,19 +49,6 @@ export const sendMessageTC = (idInstance: string, apiTokenInstance: string, data
         }
     }
 
-// export const getMessageTC = (idInstance: string, apiTokenInstance: string, receiptId: number): AppThunk =>
-//     async (dispatch) => {
-//         try {
-//             const res = await messageAPI.GetMessageBody(idInstance, apiTokenInstance);
-//             if (res.data) {
-//                 dispatch(getMessage(res.data));
-//                 await messageAPI.DeleteNotification(idInstance, apiTokenInstance, receiptId);
-//                 console.log("Notification deleted successfully");
-//             }
-//         } catch (e) {
-//             console.log(e);
-//         }
-//     };
 export const getMessageTC = (idInstance: string, apiTokenInstance: string): AppThunk =>
     async (dispatch) => {
         try {

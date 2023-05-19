@@ -1,8 +1,8 @@
 import React from 'react';
-import {useAppDispatch, useAppSelector} from '../../../bll/store/hook';
+import {useAppDispatch, useAppSelector} from '../../../store/config/hook';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
-import {loginTC} from '../../../bll/slices/auth-slice';
+import {loginTC} from '../../../store/slices/auth-slice';
 import {PATH} from '../../../utils/path/PATH';
 import {Navigate} from 'react-router-dom';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
