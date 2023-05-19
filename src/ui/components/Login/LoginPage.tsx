@@ -35,7 +35,7 @@ export const LoginPage = () => {
 
     return (
         <Container>
-            <Row className="justify-content-center mt-5">
+            <Row className="justify-content-center pt-5">
                 <Col xs={12} md={6}>
                     <Form onSubmit={formik.handleSubmit}>
                         <Form.Group className="mb-3">

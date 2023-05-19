@@ -37,7 +37,7 @@ export const AddChat:FC<AddChatType> = ({users}) => {
                 <Col md={8}>
                     <InputGroup className="mb-3">
                         <FormControl placeholder="(format: 79.....)" ref={inputRef} />
-                        <Button variant="primary" onClick={onClickHandler}>
+                        <Button variant="primary" onClick={onClickHandler} style={{marginLeft: "5px"}}>
                             Add Chat
                         </Button>
                     </InputGroup>
